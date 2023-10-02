@@ -13,7 +13,7 @@ from viam.rpc.dial import DialOptions, Credentials
 from viam.proto.app.data import Filter, CaptureInterval
 
 async def main():
-    input_dir = 'POCDATA5'
+    input_dir = '/Users/jeremyhyde/Downloads/POCDATA5'
     directory = input_dir + '/imu'
     component_name = "POCDATA5_imu"
     part_id = "819994b1-82c2-404b-ae43-93cdbdd328ba"
@@ -29,8 +29,8 @@ async def main():
     data_client = app_client.data_client
 
     # Delete existing data.
-    await data_client.delete_tabular_data_by_filter(Filter(component_name=component_name))
-    print("Deleted old data associated with " + component_name)
+    # await data_client.delete_tabular_data_by_filter(Filter(component_name=component_name))
+    # print("Deleted old data associated with " + component_name)
 
     numFiles = len(os.listdir(directory))
     index = 0
